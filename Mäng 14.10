@@ -1,0 +1,16 @@
+let küsimus=1
+while(küsimus<4){
+    let random = parseInt(Math.random()* 10)
+    console.log (random)
+    let value=prompt()
+    if (value==random)
+    {
+    console.log (value +" õige")
+    break
+    }
+    else
+    {
+    console.log ("vale, õige vastus on " + random + "." + " Proovi uuesti" )
+    }
+    küsimus+=1
+}
