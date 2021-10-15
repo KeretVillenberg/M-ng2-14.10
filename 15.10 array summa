@@ -5,9 +5,9 @@ let sum=hinnad.reduce(function(a,b) {
 console.log(sum)
 
 function reduce(hinnad, function) {
-   let eelmine = array[0]
-   for(let i=1; i<array.length; i++) {
-     eelmine = fn(eelmine, array[i])
+   let eelmine = hinnad[0]
+   for(let i=1; i<hinnad.length; i++) {
+     eelmine = fn(eelmine, hinnad[i])
   }
 }
 
