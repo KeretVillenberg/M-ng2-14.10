@@ -1,0 +1,8 @@
+let hinnad = [11,2,34,55,4,2,44,75,6,12,34,22,16]
+let sum=hinnad.reduce(function(a,b) {
+    return a+b
+})
+console.log(sum)
+let min = Math.min(...hinnad)
+let max = Math.max(...hinnad)
+console.log("Kõige väiksem number on " + min + " ning kõige suurem number on " + max)
