@@ -3,3 +3,14 @@ let sum=hinnad.reduce(function(a,b) {
     return a+b
 })
 console.log(sum)
+
+function reduce(array, fn) {
+   let eelmine = array[0]
+   for(let i=1; i<array.length; i++) {
+     fn(eelmine, array[i])
+  }
+}
+
+reduce(hinnad, function(a,b) {
+    return a+b
+})
