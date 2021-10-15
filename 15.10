@@ -1,0 +1,5 @@
+let hinnad = [11,2,34,55,4,2,44,75,6,12,34,22,16]
+let i=0;
+while (i < hinnad.length-1) {
+    console.log(hinnad[i++])
+}
