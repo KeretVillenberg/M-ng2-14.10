@@ -1,0 +1,15 @@
+function balanced (jada){
+let y = 0
+let x = 0
+for (let i = 0; i<=jada.length-1; i++){
+    if( jada[i]=='y'){
+        y +=1
+        console.log(y)
+    }
+    if( jada[i]=='x'){
+        x+=1
+        console.log(x)
+    }
+} 
+return x == y
+}
