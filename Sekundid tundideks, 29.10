@@ -1,0 +1,3 @@
+let sekundid = prompt("sisesta sekundid")
+let tunnid = Math.floor(sekundid/60/60)
+console.log(tunnid)
