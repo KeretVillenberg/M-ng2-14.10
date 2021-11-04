@@ -1,0 +1,27 @@
+<body>
+    <input type="password" id="inpt"/>
+    <a href="">Link</a>
+    <button onclick='vajutasNuppu()'>Lisa uus kanne</button>
+    <button class="btn">Lisa uus kanne2</button>
+    <script>// siia saab kirjutada ainult javaScrpti
+    let a= 2 + 2;
+    console.log(a)
+
+    function vajutasNuppu(){
+        console.log("vajutasin nuppu")
+        console.log(document.getElementById("inpt").value)
+    }
+// üks viis leida elementi JS abil
+    document.body.children[3]
+    console.log(document.body.children[3])
+// teine viis, DOM Document Object Model
+    document.getElementsByClassName('btn')[0]
+    console.log(document.getElementsByClassName('btn')[0])
+    document.getElementById('btn')
+    console.log(document.getElementById('btn'))
+//kolmas viis
+    document.querySelector('.btn')//see otsib tervest dokumendist kõik õiged asjad üles.
+    console.log(document.querySelector('.btn'))
+    </script>
+</body>
+</html>
