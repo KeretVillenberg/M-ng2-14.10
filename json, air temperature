@@ -1,0 +1,15 @@
+fetch('https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=51.5&lon=0')
+   .then(response => {
+       if (!response.ok) {
+           throw new Error("HTTP error " + response.status);
+       }
+       return response.json();
+   })
+   .then(json => {
+       json.properties.timeseries.forEach(u => {
+          console.log(u.data.instant.details.air_temperature)
+        });
+   })
+   .catch(function () {
+       console.log("error")
+   })
