@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tere
+    <input id="kast" onkeyup="onKeyPress(event)" />
+    <button onclick="onKeyPress(event)">Lisa uus</button>
+    <ul id="list">
+       
+    </ul>
+    <script>
+        fetch('http://demo2.z-bit.ee/todo.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("HTTP error " + response.status);
+                }
+                return response.json();
+            })
+            .then(json => {
+                json.forEach(u => {
+                    console.log(u)
+                 //for(i=0; i<u.length; i++){
+                 console.log(u)    
+                // }
+                    lisaRida(u.title + ",  Kriejldus:" + u.desc)
+                });
+            })
+        
+        function lisaRida(name) {
+            let li = document.createElement("li");
+            li.onclick = function() {
+                if (li.style.textDecoration == "line-through")
+                    li.style.textDecoration = "none"
+                else
+                    li.style.textDecoration = "line-through"
+            }
+            li.textContent = name;
+            let del = document.createElement("button");
+            del.textContent = "Kustuta"
+            del.onclick = function(event) {
+                console.log(event)
+                event.target.parentElement.remove();
+            }
+            li.appendChild(del);
+            let element = document.getElementById("list");
+            element.appendChild(li);
+        }
+
+        function onKeyPress(event) {
+            console.log(event, event.hasOwnProperty('key'))
+            if ('key' in event && event.key != "Enter")
+                return;
+
+            lisaRida(document.body.children[0].value)
+        }
+    </script>
+</body>
+</html>
